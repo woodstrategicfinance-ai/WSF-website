@@ -338,6 +338,44 @@
       gap: 16px;
     }
 
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      /* Nav */
+      .nav-inner { padding: 0 20px !important; height: 64px !important; }
+      .nav-links { display: none !important; }
+
+      /* Hero */
+      .hero-card { padding: 28px 22px !important; margin-bottom: 32px !important; }
+      .hero-card h1 { font-size: 40px !important; }
+      .hero-card p { font-size: 16px !important; }
+      .hero-buttons { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+      .hero-buttons .btn-red { text-align: center !important; }
+      .hero-buttons a { justify-content: center !important; }
+
+      /* Hide the complex before/after dashboard on mobile */
+      .dashboard-mockup { display: none !important; }
+
+      /* Services */
+      .services-grid { grid-template-columns: 1fr !important; }
+
+      /* Approach */
+      .approach-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+
+      /* About */
+      .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .about-chips-grid { grid-template-columns: 1fr 1fr !important; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+
+      /* Modal */
+      .modal-card { padding: 28px 22px !important; }
+      .modal-name-row { grid-template-columns: 1fr !important; }
+
+      /* Section padding */
+      section { padding-left: 20px !important; padding-right: 20px !important; }
+    }
+
     /* Aurora background */
     @keyframes aurora {
       from { background-position: 50% 50%, 50% 50%; }
@@ -401,7 +439,7 @@
 
 <!-- ========== NAVIGATION ========== -->
 <nav style="position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid #f0f0f0;">
-  <div style="max-width: 1160px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between;">
+  <div class="nav-inner" style="max-width: 1160px; margin: 0 auto; padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between;">
     <!-- Logo -->
     <a href="#" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
       <img src="brand_assets/LogoOnly.PNG" alt="Wood Strategic Finance" style="height: 56px; width: auto;" />
@@ -412,7 +450,7 @@
     </a>
 
     <!-- Nav links -->
-    <div style="display: flex; align-items: center; gap: 28px;">
+    <div class="nav-links" style="display: flex; align-items: center; gap: 28px;">
       <a href="#services" class="nav-link">Services</a>
       <a href="#approach" class="nav-link">Approach</a>
       <a href="#about" class="nav-link">About</a>
@@ -435,12 +473,12 @@
   </div>
   <!-- Hero Content -->
   <div style="max-width: 1160px; margin: 0 auto; position: relative; z-index: 1;">
-  <div style="text-align: center; max-width: 680px; margin: 0 auto 52px; background: rgba(255,255,255,0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; padding: 40px 44px; box-shadow: 0 2px 32px rgba(140,26,26,0.07), 0 0 0 1px rgba(255,255,255,0.6);">
+  <div class="hero-card" style="text-align: center; max-width: 680px; margin: 0 auto 52px; background: rgba(255,255,255,0.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 20px; padding: 40px 44px; box-shadow: 0 2px 32px rgba(140,26,26,0.07), 0 0 0 1px rgba(255,255,255,0.6);">
 
     <p style="font-size: 13px; font-weight: 500; color: #8C1A1A; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px;">Strategic Finance Consulting</p>
     <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 62px; font-weight: 700; line-height: 1.06; letter-spacing: -0.03em; color: #171717; margin: 0 0 22px;">Financial clarity that drives decisive action.</h1>
     <p style="font-size: 18px; color: #6f6f6f; line-height: 1.65; margin: 0 0 34px; max-width: 540px; margin-left: auto; margin-right: auto;">Wood Strategic Finance delivers expert financial analysis, modeling, and strategic planning — so executives and business owners can make confident decisions.</p>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 14px;">
+    <div class="hero-buttons" style="display: flex; align-items: center; justify-content: center; gap: 14px;">
       <button onclick="openModal()" class="btn-red" style="font-size: 15px; padding: 12px 28px;">Book a Consultation</button>
       <a href="#services" style="font-size: 14px; font-weight: 500; color: #171717; text-decoration: none; display: flex; align-items: center; gap: 6px;">
         Learn more
@@ -837,7 +875,7 @@
 
 <!-- ========== PLATFORM SECTION ========== -->
 <section id="approach" style="padding: 100px 32px;">
-  <div style="max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+  <div class="approach-grid" style="max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
     <!-- Left text -->
     <div>
       <p style="font-size: 12px; font-weight: 600; color: #8C1A1A; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;">The Approach</p>
@@ -1080,7 +1118,7 @@
 <!-- ========== ABOUT ========== -->
 <section id="about" style="padding: 100px 32px; background: #fcfcfc; border-top: 1px solid #f0f0f0;">
   <div style="max-width: 1160px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center;">
+    <div class="about-grid" style="display: grid; grid-template-columns: 380px 1fr; gap: 80px; align-items: center;">
 
       <!-- Left: Headshot -->
       <div style="position: relative;">
@@ -1101,7 +1139,7 @@
         <p style="font-size: 16px; color: #4a4a4a; line-height: 1.75; margin: 0 0 36px;">I'm a finance and strategy leader with 14 years of experience helping organizations make smarter decisions. After serving as a Marine Corps Officer, I've built a career at the intersection of data, planning, and execution. I bring discipline, clarity, and a bias for action to everything I do.</p>
 
         <!-- Role tiles -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 36px;">
+        <div class="about-chips-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 36px;">
           <div style="background: #fff; border: 1px solid #ededed; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 10px;">
             <div style="width: 30px; height: 30px; border-radius: 7px; background: #fdf0f0; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13l3-5 2.5 3 2-2.5L14 13H3z" stroke="#8C1A1A" stroke-width="1.2" stroke-linejoin="round"/><rect x="2" y="2" width="12" height="10" rx="1.5" stroke="#8C1A1A" stroke-width="1.2"/></svg>
@@ -1194,7 +1232,7 @@
       <!-- Fields -->
       <form id="consultForm" onsubmit="submitModal(event)" style="display: flex; flex-direction: column; gap: 18px;">
         <!-- Name row -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="modal-name-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
           <div class="modal-field">
             <label for="mFirstName">First Name</label>
             <input id="mFirstName" name="firstName" class="modal-input" type="text" placeholder="First" required />
@@ -1243,7 +1281,7 @@
 <footer style="background: #0A0A0A; border-top: 1px solid #1e1e1e; padding: 64px 32px 32px;">
   <div style="max-width: 1160px; margin: 0 auto;">
     <!-- Footer top -->
-    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 52px;">
+    <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 52px;">
       <!-- Brand -->
       <div>
         <a href="#" style="text-decoration: none; display: flex; align-items: center; margin-bottom: 16px;">
