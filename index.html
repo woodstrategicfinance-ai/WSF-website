@@ -352,8 +352,9 @@
       .hero-buttons .btn-red { text-align: center !important; }
       .hero-buttons a { justify-content: center !important; }
 
-      /* Hide the complex before/after dashboard on mobile */
+      /* Swap desktop/mobile dashboard versions */
       .dashboard-mockup { display: none !important; }
+      .mobile-mockup { display: block !important; }
 
       /* Services */
       .services-grid { grid-template-columns: 1fr !important; }
@@ -368,8 +369,10 @@
       /* Footer */
       .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
 
-      /* Modal */
-      .modal-card { padding: 28px 22px !important; }
+      /* Modal — scrollable on mobile */
+      .modal-overlay { align-items: flex-start !important; overflow-y: auto !important; padding: 16px 16px 40px !important; }
+      .modal-card { padding: 56px 22px 28px !important; margin: auto; }
+      .modal-close { position: fixed !important; top: 28px !important; right: 28px !important; z-index: 10001 !important; background: #1e1e1e !important; border-color: rgba(255,255,255,0.12) !important; }
       .modal-name-row { grid-template-columns: 1fr !important; }
 
       /* Section padding */
@@ -604,6 +607,59 @@
     </div>
 
   </div>
+
+  <!-- ── Mobile before/after (visible only on mobile) ── -->
+  <div class="mobile-mockup" style="display:none; margin-top: 8px; border-radius: 12px; overflow: hidden; border: 1px solid #e8e8e8; box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 20px 60px rgba(0,0,0,0.08); background: #fff;">
+
+    <!-- Before -->
+    <div style="padding: 18px 18px 14px; background: #fafafa; border-bottom: 1px solid #eeeeee;">
+      <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #b0b0b0; margin-bottom: 10px;">Before</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;">
+        <div style="display: inline-flex; align-items: center; gap: 5px; background: #f0f0f0; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px 8px;"><svg width="12" height="12" viewBox="0 0 13 13" fill="none"><rect width="13" height="13" rx="2" fill="#d4d4d4"/><path d="M3 3.5l2 3-2 3h1.5l1.25-2L7 9.5h1.5L6.5 6.5l2-3H7l-1.25 2L4.5 3.5H3z" fill="#888"/></svg><span style="font-size: 11px; font-weight: 500; color: #888;">Excel</span></div>
+        <div style="display: inline-flex; align-items: center; gap: 5px; background: #f0f0f0; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px 8px;"><svg width="12" height="12" viewBox="0 0 13 13" fill="none"><rect width="13" height="13" rx="2" fill="#d4d4d4"/><circle cx="6.5" cy="6.5" r="3" stroke="#888" stroke-width="1.2" fill="none"/><circle cx="6.5" cy="6.5" r="1" fill="#888"/></svg><span style="font-size: 11px; font-weight: 500; color: #888;">QuickBooks</span></div>
+        <div style="display: inline-flex; align-items: center; gap: 5px; background: #f0f0f0; border: 1px solid #e0e0e0; border-radius: 6px; padding: 4px 8px;"><svg width="12" height="12" viewBox="0 0 13 13" fill="none"><rect width="13" height="13" rx="2" fill="#d4d4d4"/><rect x="3" y="3.5" width="7" height="1" rx="0.5" fill="#888"/><rect x="3" y="6" width="5" height="1" rx="0.5" fill="#888"/><rect x="3" y="8.5" width="6" height="1" rx="0.5" fill="#888"/></svg><span style="font-size: 11px; font-weight: 500; color: #888;">Reports</span></div>
+      </div>
+      <div style="background: #fff; border: 1px solid #e8e8e8; border-radius: 7px; overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; background: #f4f4f4; border-bottom: 1px solid #ececec; padding: 6px 10px; gap: 8px;"><span style="font-size: 10px; font-weight: 600; color: #aaa;">METRIC</span><span style="font-size: 10px; font-weight: 600; color: #aaa;">Q3</span><span style="font-size: 10px; font-weight: 600; color: #aaa;">Q4</span></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 6px 10px; gap: 8px; border-bottom: 1px solid #f4f4f4;"><span style="font-size: 11px; color: #9a9a9a;">Revenue</span><span style="font-size: 11px; color: #9a9a9a;">$2.1M</span><span style="font-size: 11px; color: #b0b0b0; font-style: italic;">~$2.4M?</span></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 6px 10px; gap: 8px; border-bottom: 1px solid #f4f4f4;"><span style="font-size: 11px; color: #9a9a9a;">Margin</span><span style="font-size: 11px; color: #c0c0c0;">—</span><span style="font-size: 11px; color: #9a9a9a;">21%</span></div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 6px 10px; gap: 8px;"><span style="font-size: 11px; color: #9a9a9a;">Cash</span><span style="font-size: 11px; color: #9a9a9a;">$480K</span><span style="font-size: 11px; color: #b0b0b0; font-style: italic;">see tab 3</span></div>
+      </div>
+      <div style="font-size: 10.5px; color: #c0c0c0; font-style: italic; margin-top: 10px;">Scattered across tools. No single source of truth.</div>
+    </div>
+
+    <!-- Arrow divider -->
+    <div style="display: flex; align-items: center; justify-content: center; padding: 12px; background: #fff; border-bottom: 1px solid #eeeeee;">
+      <svg width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M16 2v16M8 12l8 8 8-8" stroke="#8C1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-size: 9px; font-weight: 600; color: #c8a0a0; letter-spacing: 0.07em; text-transform: uppercase; margin-left: 8px;">Wood Strategic Finance</span>
+    </div>
+
+    <!-- After -->
+    <div style="padding: 18px 18px 16px; background: #fff;">
+      <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8C1A1A; margin-bottom: 10px;">After</div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px;">
+        <div>
+          <div style="font-size: 10.5px; color: #9a9a9a; margin-bottom: 2px;">Projected Annual Revenue</div>
+          <div style="font-size: 22px; font-weight: 700; letter-spacing: -0.03em; color: #171717;">$4,250,000</div>
+        </div>
+        <div style="font-size: 10.5px; color: #8C1A1A; font-weight: 600; background: #fdf0f0; padding: 3px 8px; border-radius: 20px;">↑ +22.6% YoY</div>
+      </div>
+      <svg width="100%" height="72" viewBox="0 0 380 100" preserveAspectRatio="none" style="margin-bottom: 12px;">
+        <defs><linearGradient id="mobileAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8C1A1A" stop-opacity="0.13"/><stop offset="100%" stop-color="#8C1A1A" stop-opacity="0"/></linearGradient></defs>
+        <line x1="0" y1="30" x2="380" y2="30" stroke="#f2f2f2" stroke-width="1"/><line x1="0" y1="60" x2="380" y2="60" stroke="#f2f2f2" stroke-width="1"/><line x1="0" y1="90" x2="380" y2="90" stroke="#f2f2f2" stroke-width="1"/>
+        <path fill="url(#mobileAreaGrad)" d="M0,82 C40,78 70,70 100,62 C130,54 150,58 185,46 C215,36 235,42 265,32 C290,24 315,26 345,16 C360,11 370,10 380,8 L380,100 L0,100 Z"/>
+        <path fill="none" stroke="#8C1A1A" stroke-width="1.8" stroke-linecap="round" d="M0,82 C40,78 70,70 100,62 C130,54 150,58 185,46 C215,36 235,42 265,32 C290,24 315,26 345,16 C360,11 370,10 380,8"/>
+        <circle cx="380" cy="8" r="3.5" fill="#8C1A1A"/>
+      </svg>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 80px; background: #f8f8f8; border: 1px solid #ebebeb; border-radius: 7px; padding: 8px 10px;"><div style="font-size: 9.5px; color: #9a9a9a; margin-bottom: 2px;">Op. Margin</div><div style="font-size: 13px; font-weight: 600; color: #171717;">28.4%</div></div>
+        <div style="flex: 1; min-width: 80px; background: #f8f8f8; border: 1px solid #ebebeb; border-radius: 7px; padding: 8px 10px;"><div style="font-size: 9.5px; color: #9a9a9a; margin-bottom: 2px;">Cost Savings</div><div style="font-size: 13px; font-weight: 600; color: #171717;">$38K</div></div>
+        <div style="flex: 1; min-width: 80px; background: #fdf0f0; border: 1px solid #f5dada; border-radius: 7px; padding: 8px 10px;"><div style="font-size: 9.5px; color: #b87070; margin-bottom: 2px;">YoY Growth</div><div style="font-size: 13px; font-weight: 600; color: #8C1A1A;">+22.6%</div></div>
+      </div>
+    </div>
+
+  </div>
+
   </div><!-- /hero content wrapper -->
 
 </section>
